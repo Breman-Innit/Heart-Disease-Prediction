@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <header class="header">
+            <p class="eyebrow">MACHINE LEARNING PROJECT</p>
+            <h1>Heart Disease Prediction</h1>
+            <p>
+                Enter the patient measurements below to generate a
+                prediction using a trained machine learning model.
+            </p>
+        </header>
+
+        <section class="prediction-card">
+            <div class="section-heading">
+                <h2>Patient information</h2>
+                <p>All 13 measurements are required.</p>
+            </div>
+
+            <form id="predictionForm">
+
+                <div class="form-section">
+                    <h3>Personal information</h3>
+
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="age">Age (years)</label>
+                            <input type="number" id="age" min="1" max="120" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="sex">Sex</label>
+                            <select id="sex" required>
+                                <option value="">Select sex</option>
+                                <option value="1">Male</option>
+                                <option value="0">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Medical measurements</h3>
+
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="cp">Chest pain type</label>
+                            <select id="cp" required>
+                                <option value="">Select type</option>
+                                <option value="1">Type 1</option>
+                                <option value="2">Type 2</option>
+                                <option value="3">Type 3</option>
+                                <option value="4">Type 4</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="trestbps">Resting blood pressure (mm Hg)</label>
+                            <input type="number" id="trestbps" min="1" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="chol">Cholesterol (mg/dl)</label>
+                            <input type="number" id="chol" min="1" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="fbs">Fasting blood sugar above 120 mg/dl</label>
+                            <select id="fbs" required>
+                                <option value="">Select answer</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="restecg">Resting ECG result</label>
+                            <select id="restecg" required>
+                                <option value="">Select result</option>
+                                <option value="0">Normal</option>
+                                <option value="1">ST-T abnormality</option>
+                                <option value="2">Left ventricular hypertrophy</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="thalach">Maximum heart rate</label>
+                            <input type="number" id="thalach" min="1" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="exang">Exercise-induced angina</label>
+                            <select id="exang" required>
+                                <option value="">Select answer</option>
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="oldpeak">Oldpeak</label>
+                            <input type="number" id="oldpeak" min="0" step="any" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="slope">ST segment slope</label>
+                            <select id="slope" required>
+                                <option value="">Select slope</option>
+                                <option value="1">Upsloping</option>
+                                <option value="2">Flat</option>
+                                <option value="3">Downsloping</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="ca">Major vessels (0–3)</label>
+                            <select id="ca" required>
+                                <option value="">Select number</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="thal">Thalassemia result</label>
+                            <select id="thal" required>
+                                <option value="">Select result</option>
+                                <option value="3">Normal (3)</option>
+                                <option value="6">Fixed defect (6)</option>
+                                <option value="7">Reversible defect (7)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" id="predictButton">
+                    Generate prediction
+                </button>
+
+            </form>
+
+            <div id="error" class="error hidden"></div>
+
+            <section id="result" class="result hidden">
+    <h3>Prediction result</h3>
+    <p id="predictionText"></p>
+    <p id="confidence"></p>
+
+    <div class="probability-list">
+        <p>No heart disease: <strong id="noDisease"></strong></p>
+        <p>Heart disease: <strong id="heartDisease"></strong></p>
+    </div>
+
+    <button type="button" id="resetButton">
+        Run Another Prediction
+    </button>
+</section>
+                <h3>Prediction result</h3>
+                <p id="predictionText"></p>
+                <p id="confidence"></p>
+
+                <div class="probability-list">
+                    <p>No heart disease: <strong id="noDisease"></strong></p>
+                    <p>Heart disease: <strong id="heartDisease"></strong></p>
+                </div>
+            </section>
+        </section>
+
+        <footer>
+            <p>Educational machine learning demonstration. Not a medical diagnosis.</p>
+        </footer>
+
+    </main>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

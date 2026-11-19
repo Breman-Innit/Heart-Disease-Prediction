@@ -2,4 +2,5 @@ pandas
 numpy
 matplotlib
 scikit-learn
-joblibgit add .gitignore
+joblib
+Flask
